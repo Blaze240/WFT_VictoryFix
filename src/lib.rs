@@ -6,13 +6,11 @@
     unused_macros
 )]
 
-mod mario;
-mod falco;
-mod custom;
+mod chrom_fsmash;
+mod chrom_fair;
 
 #[skyline::main(name = "smashline_test")]
 pub fn main() {
-    mario::install();
-    falco::install();
-    custom::install();
+    chrom_fsmash::install();
+    chrom_fair::install();
 }
