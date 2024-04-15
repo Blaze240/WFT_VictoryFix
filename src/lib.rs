@@ -9,10 +9,12 @@
 mod chrom_fsmash;
 mod chrom_fair;
 mod chrom_dair;
+mod chrom_uair;
 
-#[skyline::main(name = "smashline_test")]
+#[skyline::main(name = "kain_moveset")]
 pub fn main() {
     chrom_fsmash::install();
     chrom_fair::install();
     chrom_dair::install();
+    chrom_uair::install();
 }
