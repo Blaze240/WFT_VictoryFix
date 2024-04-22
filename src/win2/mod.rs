@@ -47,12 +47,8 @@ unsafe fn master_sound_win2(agent: &mut L2CAgentBase) {
         if macros::is_excute(agent) {
             macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win02_03"));
         }
-
                       }
                      }
-                
-    
-
 pub fn install() {
     smashline::install_acmd_scripts!(
      master_sound_win2
