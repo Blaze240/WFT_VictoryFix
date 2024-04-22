@@ -6,19 +6,13 @@
     unused_macros
 )]
 
-mod chrom_fsmash;
-mod chrom_dsmash;
-mod chrom_fair;
-mod chrom_dair;
-mod chrom_uair;
-mod chrom_bair;
+mod win1;
+mod win2;
+mod win3;
 
-#[skyline::main(name = "kain_moveset")]
+#[skyline::main(name = "byleth_victoryfix")]
 pub fn main() {
-    chrom_fsmash::install();
-    chrom_dsmash::install();
-    chrom_fair::install();
-    chrom_bair::install();
-    chrom_dair::install();
-    chrom_uair::install();
+    win1::install();
+    win2::install();
+    win3::install();
 }
