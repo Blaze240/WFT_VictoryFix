@@ -6,7 +6,6 @@ Note that this plugin specifically is coded to follow the costume distribution o
 
 Smashline 1 and Smashline 2 versions available.
 ## Prerequesites
-* ARCropolis
 * NRO_Hook
 * Smashline
 
