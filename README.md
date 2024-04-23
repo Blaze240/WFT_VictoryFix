@@ -1,4 +1,4 @@
-# Byleth Victory Fix
+# Byleth Victory Fix (Smashline 2)
 
 Skyline plugin modifying Byleth's win scripts to have voice lines and sound effects function properly on added slots (c08+)
 
