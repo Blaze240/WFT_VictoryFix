@@ -9,9 +9,9 @@ use {
     smashline::*
 };
 
-#[acmd_script( agent = "master", script = "sound_win3", category = ACMD_SOUND )]
+#[acmd_script( agent = "master", script = "sound_win3", category = ACMD_SOUND, low_priority )]
 unsafe fn master_sound_win3(agent: &mut L2CAgentBase) {
-    if WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR) % 2 == 1 {
+    if WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR) % 2 == 0 {
         frame(agent.lua_state_agent, 52.0);
         if macros::is_excute(agent) {
             macros::PLAY_SE_NO_3D(agent, Hash40::new("se_master_win03_01"));
