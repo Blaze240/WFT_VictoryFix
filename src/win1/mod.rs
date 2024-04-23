@@ -3,14 +3,13 @@ use {
         lua2cpp::*,
         phx::*,
         app::{sv_animcmd::*, lua_bind::*, *},
-        lib::lua_const::*
+        lib::{lua_const::*, L2CValue, L2CAgent},
+        hash40
     },
     smash_script::*,
     smashline::*
 };
-
-#[acmd_script( agent = "master", script = "sound_win1", category = ACMD_SOUND )]
-unsafe fn master_sound_win1(agent: &mut L2CAgentBase) {
+unsafe extern "C" fn master_sound_win1(agent: &mut L2CAgentBase) {
     if WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR) % 2 == 1 {
         frame(agent.lua_state_agent, 28.0);
         if macros::is_excute(agent) {
@@ -44,7 +43,7 @@ unsafe fn master_sound_win1(agent: &mut L2CAgentBase) {
                      }
 
 pub fn install() {
-    smashline::install_acmd_scripts!(
-     master_sound_win1
-    );
+    Agent::new("master")
+     .sound_acmd("sound_win1",master_sound_win1)
+     .install();
 }
