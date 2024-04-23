@@ -16,10 +16,14 @@
 mod win1a;
 mod win2a;
 mod win3a;
+mod win1b;
+mod win3b;
 
 #[skyline::main(name = "robin_victoryfix_SL2")]
 pub fn main() {
     win1a::install();
     win2a::install();
     win3a::install();
+    win1b::install();
+    win3b::install();
 }
