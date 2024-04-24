@@ -9,30 +9,30 @@ use {
     smash_script::*,
     smashline::*,
 };
-unsafe extern "C" fn wiifit_sound_win2a(agent: &mut L2CAgentBase) {
+unsafe extern "C" fn wiifit_sound_win1d(agent: &mut L2CAgentBase) {
     if WorkModule::get_int(agent.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_COLOR) % 2 == 0 {
-        frame(agent.lua_state_agent, 17.0);
+        frame(agent.lua_state_agent, 0.0);
         if macros::is_excute(agent) {
-            macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_wiifit_win01"));
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_wiifit_win07"));
         }
-    frame(agent.lua_state_agent, 54.0);
+    frame(agent.lua_state_agent, 60.0);
     if macros::is_excute(agent) {
-        macros::PLAY_SE(agent, Hash40::new("se_wiifit_attackair_h01"));
+        macros::PLAY_SE(agent, Hash40::new("se_wiifit_smash_h01"));
     }
-    frame(agent.lua_state_agent, 119.0);
+    frame(agent.lua_state_agent, 124.0);
     if macros::is_excute(agent) {
         macros::PLAY_SE(agent, Hash40::new("se_wiifit_smash_s01"));
     }
 }else {
         frame(agent.lua_state_agent, 0.0);
         if macros::is_excute(agent) {
-            macros::PLAY_SE(agent, Hash40::new("vc_wiifit_win02"));
+            macros::PLAY_SE(agent, Hash40::new("vc_wiifit_win16"));
         }
-        frame(agent.lua_state_agent, 54.0);
+        frame(agent.lua_state_agent, 60.0);
         if macros::is_excute(agent) {
-            macros::PLAY_SE_NO_3D(agent, Hash40::new("se_wiifit_attackair_h01"));
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("se_wiifit_smash_h01"));
         }
-        frame(agent.lua_state_agent, 119.0);
+        frame(agent.lua_state_agent, 124.0);
         if macros::is_excute(agent) {
             macros::PLAY_SE(agent, Hash40::new("se_wiifit_smash_s01"));
         }
@@ -41,6 +41,6 @@ unsafe extern "C" fn wiifit_sound_win2a(agent: &mut L2CAgentBase) {
 
 pub fn install() {
     Agent::new("wiifit")
-        .sound_acmd("sound_win2a", wiifit_sound_win2a)
+        .sound_acmd("sound_win1d", wiifit_sound_win1d)
         .install();
 }
