@@ -26,7 +26,7 @@ unsafe extern "C" fn wiifit_sound_win1c(agent: &mut L2CAgentBase) {
 }else {
         frame(agent.lua_state_agent, 40.0);
         if macros::is_excute(agent) {
-            macros::PLAY_SE(agent, Hash40::new("vc_wiifit_win10"));
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_wiifit_win10"));
         }
         frame(agent.lua_state_agent, 60.0);
         if macros::is_excute(agent) {

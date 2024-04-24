@@ -22,7 +22,7 @@ unsafe extern "C" fn wiifit_sound_win2g(agent: &mut L2CAgentBase) {
 }else {
         frame(agent.lua_state_agent, 0.0);
         if macros::is_excute(agent) {
-            macros::PLAY_SE(agent, Hash40::new("vc_wiifit_win19"));
+            macros::PLAY_SE_NO_3D(agent, Hash40::new("vc_wiifit_win19"));
         }
         frame(agent.lua_state_agent, 54.0);
         if macros::is_excute(agent) {
